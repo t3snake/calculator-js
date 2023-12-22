@@ -75,7 +75,7 @@ h2 {
     background-color: #daeaf5;
 }
 
-.equals,.back {
+.equals{
     background-color: #4997d0;
 }
 
@@ -83,7 +83,7 @@ h2 {
     background-color: #91c0e2;
 }
 
-.clear {
+.clear, .back  {
     background-color: #ff6347;
 }
 
