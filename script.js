@@ -37,12 +37,14 @@ function operate(num1, op, num2) {
 }
 
 const buttons = document.querySelectorAll(".button");
-const display = document.querySelector("#display");
+const display = document.querySelector("#input");
 const operators = {"+": true, "-": true, "*": true, "/": true};
 let stack = [];
 
 buttons.forEach((button) => {
-    if (button.classList.contains("clear")){
+    if (button.classList.contains("back")){
+        addBackClickListener(button);
+    } else if (button.classList.contains("clear")){
         addClearClickListener(button);
     } else if (button.classList.contains("equals")){
         addEqualsClickListener(button);
@@ -51,6 +53,12 @@ buttons.forEach((button) => {
     }
 
 })
+
+function addBackClickListener(button) {
+    button.addEventListener("click", () => {
+        display.textContent = display.textContent.slice(0,-1);
+    })
+}
 
 function addClearClickListener(button) {
     button.addEventListener("click", () => {
